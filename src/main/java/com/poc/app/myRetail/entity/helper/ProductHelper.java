@@ -11,9 +11,6 @@ import com.poc.app.myRetail.response.vo.ProductVO;
 @Component
 public class ProductHelper {
 
-	/**
-	 * 
-	 */
 	public ProductHelper() {
 		// TODO Auto-generated constructor stub
 	}

@@ -17,10 +17,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import com.poc.app.myRetail.exception.MyRetailException;
 
-/**
- * @author rpcha
- *
- */
 @Component
 public class ConnectionHttpClient {
 
@@ -40,11 +36,12 @@ public class ConnectionHttpClient {
 	public String getProductNameByRemoteCall(String productId) throws MyRetailException{
 
 		try {
-			logger.info("Inside ConnectionHttpClient().getProductNameByRemoteCall");
+			logger.info("Inside ConnectionHttpClient().getProductNameByRemoteCall"+apiEndpointURL+product_URI+productId);
 			UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(apiEndpointURL+product_URI+productId)
 			.queryParam("fields","descriptions")
 			.queryParam("id_type", "TCIN")
 			.queryParam("key", "43cJWpLjH8Z8oR18KdrZDBKAgLLQKJjz");
+			logger.info("builder"+builder.build().encode().toUri());
 
 			// Send request with GET method, and Headers.	
 			String jsonResponse = restTemplate.getForObject(builder.build().encode().toUri(),String.class);
