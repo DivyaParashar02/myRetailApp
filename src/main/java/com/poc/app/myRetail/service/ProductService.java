@@ -48,8 +48,9 @@ public class ProductService {
 		}
 		
 		//Retrieve title from product API
-		//TO-DO write method to call Redsky API to fetch the title
-		 productName = connectHttpClient.getProductNameByRemoteCall(productId);
+		//commented below LIne as API is not available
+		 //productName = connectHttpClient.getProductNameByRemoteCall(productId);
+		 productName = "The Big Lebowski (Blu-ray)(Widescreen)";
 		}catch(MyRetailException e) {
 			throw e; 
 		}
